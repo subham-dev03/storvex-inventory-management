@@ -1,0 +1,11 @@
+import { Router } from "express";
+import { listProducts, createProduct, updateProduct, deleteProduct, adjustStock } from "../controllers/productController.js";
+import { protect } from "../middleware/auth.js";
+const router = Router();
+router.use(protect);
+router.get("/", listProducts);
+router.post("/", createProduct);
+router.patch("/:id", updateProduct);
+router.delete("/:id", deleteProduct);
+router.post("/:id/stock", adjustStock);
+export default router;

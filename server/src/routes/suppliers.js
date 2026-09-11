@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { listSuppliers, createSupplier, updateSupplier, deleteSupplier } from "../controllers/supplierController.js";
+import { protect } from "../middleware/auth.js";
+const router = Router();
+router.use(protect);
+router.get("/", listSuppliers);
+router.post("/", createSupplier);
+router.patch("/:id", updateSupplier);
+router.delete("/:id", deleteSupplier);
+export default router;
