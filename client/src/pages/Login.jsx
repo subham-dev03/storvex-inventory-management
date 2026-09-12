@@ -49,7 +49,7 @@ export default function Login() {
   return (
     <AuthPage
       title="Welcome back"
-      subtitle="Sign in to your StockFlow workspace."
+      subtitle="Sign in to your Storvex workspace."
     >
       <form
         onSubmit={submit}
@@ -124,9 +124,18 @@ function AuthPage({
     <div className="auth-page">
       <div className="auth-panel">
 
-        <Link to="/">
-          <Logo />
-        </Link>
+        <div className="auth-topbar">
+          <Link to="/" className="auth-logo-link">
+            <Logo />
+          </Link>
+
+          <Link
+            className="auth-back-home"
+            to="/"
+          >
+            ← Back to home
+          </Link>
+        </div>
 
         <div className="auth-content">
           <h1>{title}</h1>
@@ -135,13 +144,6 @@ function AuthPage({
 
           {children}
         </div>
-
-        <Link
-          className="back-home"
-          to="/"
-        >
-          ← Back to home
-        </Link>
 
       </div>
 

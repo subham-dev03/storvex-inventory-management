@@ -48,9 +48,21 @@ export default function Register() {
     <div className="auth-page">
       <div className="auth-panel">
 
-        <Link to="/">
-          <Logo />
-        </Link>
+        <div className="auth-topbar">
+          <Link
+            to="/"
+            className="auth-logo-link"
+          >
+            <Logo />
+          </Link>
+
+          <Link
+            className="auth-back-home"
+            to="/"
+          >
+            ← Back to home
+          </Link>
+        </div>
 
         <div className="auth-content">
           <h1>
@@ -58,7 +70,7 @@ export default function Register() {
           </h1>
 
           <p>
-            Start managing your inventory with StockFlow.
+            Start managing your inventory with Storvex.
           </p>
 
           <form
@@ -140,13 +152,6 @@ export default function Register() {
           </form>
         </div>
 
-        <Link
-          className="back-home"
-          to="/"
-        >
-          ← Back to home
-        </Link>
-
       </div>
 
       <div className="auth-art">
@@ -169,7 +174,6 @@ export default function Register() {
           </p>
         </div>
       </div>
-
     </div>
   );
 }

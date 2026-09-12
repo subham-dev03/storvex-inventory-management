@@ -2200,3 +2200,291 @@ code {
         font-size: 13px !important;
     }
 }
+
+.auth-topbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.auth-logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.auth-back-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #667085;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.auth-back-home:hover {
+    color: var(--primary);
+    transform: translateX(-2px);
+}
+
+@media (max-width: 650px) {
+    .auth-topbar {
+        gap: 12px;
+    }
+
+    .auth-back-home {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 40px 18px 60px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .hero-copy {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero h1 {
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+    }
+
+    .hero p {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-actions {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-actions .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-visual {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 12px 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .dash-preview {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        padding: 16px !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        overflow: hidden !important;
+    }
+
+    .preview-top {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .preview-kpis {
+        width: 100% !important;
+        min-width: 0 !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    .preview-kpis > div {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 11px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .preview-kpis small,
+    .preview-kpis span,
+    .preview-kpis b {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .preview-kpis b {
+        font-size: 19px !important;
+    }
+
+    .preview-chart {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 12px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .bars {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        gap: 4px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .bars i {
+        width: 100% !important;
+        max-width: 18px !important;
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+    }
+
+    .preview-table {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .preview-table div {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        gap: 8px !important;
+    }
+
+    .preview-table div > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .hero {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .hero-visual {
+        padding: 10px 0 !important;
+    }
+
+    .dash-preview {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 14px !important;
+        border-radius: 16px !important;
+    }
+
+    .preview-kpis {
+        gap: 7px !important;
+    }
+
+    .preview-kpis > div {
+        padding: 9px !important;
+    }
+
+    .preview-kpis b {
+        font-size: 17px !important;
+    }
+
+    .preview-chart {
+        height: 115px !important;
+        padding: 10px !important;
+    }
+
+    .bars {
+        gap: 3px !important;
+    }
+
+    .bars i {
+        max-width: 14px !important;
+    }
+
+    .preview-table div {
+        padding: 8px !important;
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    .dash-preview {
+        padding: 12px !important;
+        border-radius: 14px !important;
+    }
+
+    .preview-kpis {
+        gap: 6px !important;
+    }
+
+    .preview-kpis > div {
+        padding: 8px !important;
+    }
+
+    .preview-kpis small,
+    .preview-kpis span {
+        font-size: 8px !important;
+    }
+
+    .preview-kpis b {
+        font-size: 16px !important;
+    }
+
+    .preview-chart {
+        height: 105px !important;
+    }
+
+    .preview-table div {
+        padding: 7px !important;
+        font-size: 9px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .dash-preview {
+        box-shadow: 0 10px 22px rgba(16, 24, 40, 0.07) !important;
+    }
+}
