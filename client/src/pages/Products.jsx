@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Boxes,
+  PackageOpen,
   Edit3,
   Plus,
   Search,
@@ -39,16 +40,18 @@ export default function Products() {
   const load = () =>
     api
       .get("/products", {
-        params: { search }
+        params: {
+          search
+        }
       })
-      .then((r) => setProducts(r.data.products));
+      .then(r => setProducts(r.data.products));
 
   useEffect(() => {
     load();
 
     api
       .get("/suppliers")
-      .then((r) => setSuppliers(r.data.suppliers));
+      .then(r => setSuppliers(r.data.suppliers));
   }, [search]);
 
   function start(p = null) {
@@ -81,15 +84,24 @@ export default function Products() {
       };
 
       if (editing) {
-        await api.patch(`/products/${editing._id}`, payload);
+        await api.patch(
+          `/products/${editing._id}`,
+          payload
+        );
       } else {
-        await api.post("/products", payload);
+        await api.post(
+          "/products",
+          payload
+        );
       }
 
       setOpen(false);
       load();
     } catch (e) {
-      alert(e.response?.data?.message || "Save failed");
+      alert(
+        e.response?.data?.message ||
+        "Save failed"
+      );
     } finally {
       setBusy(false);
     }
@@ -97,12 +109,11 @@ export default function Products() {
 
   async function remove(id) {
     if (confirm("Archive this product?")) {
-      try {
-        await api.delete(`/products/${id}`);
-        load();
-      } catch (e) {
-        alert(e.response?.data?.message || "Delete failed");
-      }
+      await api.delete(
+        `/products/${id}`
+      );
+
+      load();
     }
   }
 
@@ -110,25 +121,37 @@ export default function Products() {
     e.preventDefault();
 
     try {
-      await api.post(`/products/${stockOpen._id}/stock`, {
-        type: stock.type,
-        quantity: Number(stock.quantity)
-      });
+      await api.post(
+        `/products/${stockOpen._id}/stock`,
+        {
+          type: stock.type,
+          quantity: Number(stock.quantity)
+        }
+      );
 
       setStockOpen(false);
       load();
     } catch (e) {
-      alert(e.response?.data?.message || "Adjustment failed");
+      alert(
+        e.response?.data?.message ||
+        "Adjustment failed"
+      );
     }
   }
 
   return (
     <div className="page">
-      <div className="page-head">
-        <div>
-          <div className="eyebrow">CATALOG</div>
 
-          <h1>Products</h1>
+      <div className="page-head">
+
+        <div>
+          <div className="eyebrow">
+            CATALOG
+          </div>
+
+          <h1>
+            Products
+          </h1>
 
           <p>
             Manage your product catalog and stock levels.
@@ -142,26 +165,33 @@ export default function Products() {
           <Plus size={17} />
           Add product
         </button>
+
       </div>
 
       <div className="toolbar">
+
         <div className="search">
           <Search size={17} />
 
           <input
             placeholder="Search by name or SKU..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={e =>
+              setSearch(e.target.value)
+            }
           />
         </div>
 
         <span className="result-count">
           {products.length} products
         </span>
+
       </div>
 
       <div className="table-card">
+
         <table>
+
           <thead>
             <tr>
               <th>Product</th>
@@ -175,20 +205,28 @@ export default function Products() {
           </thead>
 
           <tbody>
-            {products.map((p) => (
+
+            {products.map(p => (
               <tr key={p._id}>
+
                 <td data-label="Product">
                   <div className="product-mini">
+
                     <span className="product-icon">
                       <Boxes size={16} />
                     </span>
 
-                    <strong>{p.name}</strong>
+                    <strong>
+                      {p.name}
+                    </strong>
+
                   </div>
                 </td>
 
                 <td data-label="SKU">
-                  <code>{p.sku}</code>
+                  <code>
+                    {p.sku}
+                  </code>
                 </td>
 
                 <td data-label="Category">
@@ -200,6 +238,7 @@ export default function Products() {
                 </td>
 
                 <td data-label="Stock">
+
                   <span
                     className={
                       p.quantity <= p.reorderLevel
@@ -209,14 +248,17 @@ export default function Products() {
                   >
                     {p.quantity}
                   </span>
+
                 </td>
 
                 <td data-label="Supplier">
                   {p.supplier?.name || "—"}
                 </td>
 
-                <td data-label="Actions">
+                <td>
+
                   <div className="row-actions">
+
                     <button
                       title="Stock in"
                       onClick={() => {
@@ -251,64 +293,93 @@ export default function Products() {
                     </button>
 
                     <button
-                      title="Archive product"
-                      onClick={() => remove(p._id)}
+                      title="Delete product"
+                      onClick={() =>
+                        remove(p._id)
+                      }
                     >
                       <Trash2 size={16} />
                     </button>
+
                   </div>
+
                 </td>
+
               </tr>
             ))}
 
             {!products.length && (
               <tr className="no-products-row">
+
                 <td colSpan="7">
-                  <div className="empty">
-                    <Boxes size={30} />
 
-                    <strong>No products found</strong>
+                  <div className="products-empty">
 
-                    <span>
+                    <div className="products-empty-icon">
+                      <PackageOpen
+                        size={38}
+                        strokeWidth={1.8}
+                      />
+                    </div>
+
+                    <h3>
+                      No products found
+                    </h3>
+
+                    <p>
                       {search
                         ? `No products match "${search}". Try a different name or SKU.`
                         : "Your product catalog is empty. Add your first product to get started."}
-                    </span>
+                    </p>
 
                     {!search && (
                       <button
-                        className="btn btn-primary"
+                        type="button"
+                        className="btn btn-primary products-empty-btn"
                         onClick={() => start()}
                       >
-                        <Plus size={16} />
+                        <Plus size={18} />
                         Add product
                       </button>
                     )}
+
                   </div>
+
                 </td>
+
               </tr>
             )}
+
           </tbody>
+
         </table>
+
       </div>
 
       <Modal
         open={open}
         onClose={() => setOpen(false)}
-        title={editing ? "Edit product" : "Add product"}
+        title={
+          editing
+            ? "Edit product"
+            : "Add product"
+        }
       >
+
         <form
           className="modal-form"
           onSubmit={save}
         >
+
           <div className="form-grid">
+
             <label>
               Product name
 
               <input
                 required
                 value={form.name}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     name: e.target.value
@@ -323,7 +394,7 @@ export default function Products() {
               <input
                 required
                 value={form.sku}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     sku: e.target.value
@@ -337,7 +408,7 @@ export default function Products() {
 
               <input
                 value={form.category}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     category: e.target.value
@@ -351,18 +422,19 @@ export default function Products() {
 
               <select
                 value={form.supplier || ""}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     supplier: e.target.value
                   })
                 }
               >
+
                 <option value="">
                   No supplier
                 </option>
 
-                {suppliers.map((s) => (
+                {suppliers.map(s => (
                   <option
                     key={s._id}
                     value={s._id}
@@ -370,7 +442,9 @@ export default function Products() {
                     {s.name}
                   </option>
                 ))}
+
               </select>
+
             </label>
 
             <label>
@@ -382,7 +456,7 @@ export default function Products() {
                 step="0.01"
                 required
                 value={form.price}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     price: e.target.value
@@ -399,7 +473,7 @@ export default function Products() {
                 min="0"
                 step="0.01"
                 value={form.costPrice}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     costPrice: e.target.value
@@ -416,7 +490,7 @@ export default function Products() {
                 min="0"
                 required
                 value={form.quantity}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     quantity: e.target.value
@@ -433,7 +507,7 @@ export default function Products() {
                 min="0"
                 required
                 value={form.reorderLevel}
-                onChange={(e) =>
+                onChange={e =>
                   setForm({
                     ...form,
                     reorderLevel: e.target.value
@@ -441,6 +515,7 @@ export default function Products() {
                 }
               />
             </label>
+
           </div>
 
           <label>
@@ -448,7 +523,7 @@ export default function Products() {
 
             <textarea
               value={form.description}
-              onChange={(e) =>
+              onChange={e =>
                 setForm({
                   ...form,
                   description: e.target.value
@@ -461,9 +536,13 @@ export default function Products() {
             className="btn btn-primary btn-full"
             disabled={busy}
           >
-            {busy ? "Saving..." : "Save product"}
+            {busy
+              ? "Saving..."
+              : "Save product"}
           </button>
+
         </form>
+
       </Modal>
 
       <Modal
@@ -471,16 +550,18 @@ export default function Products() {
         onClose={() => setStockOpen(false)}
         title={`Adjust stock · ${stockOpen?.name || ""}`}
       >
+
         <form
           className="modal-form"
           onSubmit={adjust}
         >
+
           <label>
             Movement
 
             <select
               value={stock.type}
-              onChange={(e) =>
+              onChange={e =>
                 setStock({
                   ...stock,
                   type: e.target.value
@@ -495,6 +576,7 @@ export default function Products() {
                 Stock out
               </option>
             </select>
+
           </label>
 
           <label>
@@ -505,20 +587,24 @@ export default function Products() {
               min="1"
               required
               value={stock.quantity}
-              onChange={(e) =>
+              onChange={e =>
                 setStock({
                   ...stock,
                   quantity: e.target.value
                 })
               }
             />
+
           </label>
 
           <button className="btn btn-primary btn-full">
             Apply adjustment
           </button>
+
         </form>
+
       </Modal>
+
     </div>
   );
 }
