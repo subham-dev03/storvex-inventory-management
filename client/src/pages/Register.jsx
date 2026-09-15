@@ -134,14 +134,35 @@ export default function Register() {
               />
             </label>
 
-            <button
+            {/* <button
               className="btn btn-primary btn-full"
               disabled={busy}
             >
               {busy
                 ? "Creating..."
                 : "Create account"}
+            </button> */}
+
+
+            <button
+              className="btn btn-primary btn-full"
+              disabled={busy}
+            >
+              {busy ? (
+                <>
+                  Creating
+                  <span className="button-loading">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </span>
+                </>
+              ) : (
+                "Create account"
+              )}
             </button>
+
+
 
             <p className="switch">
               Already have an account?{" "}
@@ -157,7 +178,7 @@ export default function Register() {
       <div className="auth-art">
         <div>
           <div className="art-icon">
-            ✦
+            ★
           </div>
 
           <h2>

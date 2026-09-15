@@ -95,13 +95,31 @@ export default function Login() {
           />
         </label>
 
-        <button
+        {/* <button
           className="btn btn-primary btn-full"
           disabled={busy}
         >
           {busy
             ? "Signing in..."
             : "Sign in"}
+        </button> */}
+
+        <button
+          className="btn btn-primary btn-full"
+          disabled={busy}
+        >
+          {busy ? (
+            <>
+              Signing in
+              <span className="button-loading">
+                <i></i>
+                <i></i>
+                <i></i>
+              </span>
+            </>
+          ) : (
+            "Sign in"
+          )}
         </button>
 
         <p className="switch">
