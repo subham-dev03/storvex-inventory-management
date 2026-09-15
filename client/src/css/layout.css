@@ -1,0 +1,125 @@
+.app-shell {
+    display: flex;
+    min-height: 100vh
+}
+
+.sidebar {
+    width: 240px;
+    background: #FFFFFF;
+    border-right: 1px solid var(--line);
+    padding: 25px 16px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 auto 0 0;
+    animation: sidebarEnter .55s ease both;
+    z-index: 100
+}
+
+.workspace {
+    font-size: 10px;
+    font-weight: 800;
+    color: #98a2b3;
+    letter-spacing: 1.3px;
+    padding: 40px 12px 12px
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border-radius: 8px;
+    color: #667085;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 3px 0;
+    transition: all .22s ease
+}
+
+.nav-item:hover {
+    background: #f2f6ff;
+    color: var(--primary);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(37,99,235,.08)
+}
+
+.nav-item.active {
+    background: #eef4ff;
+    color: var(--primary)
+}
+
+.sidebar-bottom {
+    margin-top: auto
+}
+
+.profile {
+    border-top: 1px solid var(--line);
+    padding: 16px 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    animation: fadeUp .5s ease .35s both
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #dce8ff;
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    flex-shrink: 0
+}
+
+.profile strong,
+.profile small {
+    display: block
+}
+
+.profile strong {
+    font-size: 13px
+}
+
+.profile small {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: capitalize
+}
+
+.logout {
+    background: transparent !important;
+    border: none !important;
+    margin-left: 11px;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    transition: transform .2s ease !important
+}
+
+.logout:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: translateX(8px)
+}
+
+.main {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    animation: mainEnter .6s ease .05s both
+}
+
+.mobile-header {
+    display: none
+}
+
+.mobile-menu-btn {
+    display: none
+}
+
+.sidebar-overlay {
+    display: none
+}
+

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+    --ink: #101828;
+    --muted: #667085;
+    --line: #e4e7ec;
+    --bg: #f7f8fa;
+    --white: #fff;
+    --primary: #2563eb;
+    --primary2: #1d4ed8;
+    --green: #12b76a;
+    --red: #f04438;
+    --amber: #f79009;
+    --dark: #0b1220
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-family: "DM Sans", sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    overflow-x: hidden
+}
+
+#root {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit
+}
+
+button {
+    cursor: pointer
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+img,
+svg,
+video {
+    max-width: 100%
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: Manrope, sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -.7px;
+    white-space: nowrap
+}
+
+.logo-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    background: #e9f0ff;
+    color: var(--primary);
+    border-radius: 9px;
+    flex-shrink: 0
+}
+
+.logo-accent {
+    color: var(--primary);
+    white-space: nowrap
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 15px;
+    font-weight: 700;
+    transition: .2s
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white
+}
+
+.btn-primary:hover {
+    background: var(--primary2);
+    transform: translateY(-1px)
+}
+
+.btn-ghost {
+    background: white;
+    border: 1px solid var(--line);
+    color: var(--ink)
+}
+
+.btn-lg {
+    padding: 13px 19px
+}
+
+.btn-full {
+    width: 100%
+}
+

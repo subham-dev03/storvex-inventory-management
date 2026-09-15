@@ -1,0 +1,178 @@
+.products-empty {
+    width: 100% !important;
+    min-height: 420px !important;
+    padding: 40px 24px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+    background: #fff !important;
+}
+
+.products-empty-icon {
+    width: 112px !important;
+    height: 112px !important;
+    margin-bottom: 20px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    position: relative !important;
+
+    border-radius: 50% !important;
+
+    background: radial-gradient(
+        circle,
+        #ffffff 0%,
+        #edf4ff 50%,
+        #e4efff 100%
+    ) !important;
+
+    color: var(--primary) !important;
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.10),
+        inset 0 0 0 1px rgba(37, 99, 235, 0.08) !important;
+}
+
+.products-empty-icon::before {
+    content: "" !important;
+
+    position: absolute !important;
+    width: 78px !important;
+    height: 78px !important;
+
+    border-radius: 50% !important;
+
+    border: 1px solid rgba(37, 99, 235, 0.08) !important;
+}
+
+.products-empty-icon svg {
+    position: relative !important;
+    z-index: 2 !important;
+    color: var(--primary) !important;
+}
+
+.products-empty h3 {
+    margin: 0 0 7px !important;
+
+    font-family: "Manrope", sans-serif !important;
+
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+
+    color: var(--ink) !important;
+}
+
+.products-empty p {
+    max-width: 470px !important;
+
+    margin: 0 !important;
+
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+
+    color: var(--muted) !important;
+}
+
+.products-empty-btn {
+    min-width: 150px !important;
+    height: 46px !important;
+
+    margin-top: 22px !important;
+    padding: 0 20px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    border-radius: 10px !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 8px 18px rgba(37, 99, 235, 0.18) !important;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease !important;
+}
+
+.products-empty-btn:hover {
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+        0 12px 24px rgba(37, 99, 235, 0.24) !important;
+}
+
+@media (max-width: 650px) {
+
+    .table-card tbody tr.no-products-row {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    .table-card tbody tr.no-products-row td {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .products-empty {
+        width: 100% !important;
+        min-height: 300px !important;
+
+        padding: 32px 18px !important;
+
+        border: 1px solid var(--line) !important;
+        border-radius: 14px !important;
+    }
+
+    .products-empty-icon {
+        width: 88px !important;
+        height: 88px !important;
+        margin-bottom: 17px !important;
+    }
+
+    .products-empty-icon::before {
+        width: 62px !important;
+        height: 62px !important;
+    }
+
+    .products-empty-icon svg {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .products-empty h3 {
+        font-size: 17px !important;
+    }
+
+    .products-empty p {
+        max-width: 290px !important;
+        font-size: 11px !important;
+        line-height: 1.55 !important;
+    }
+
+    .products-empty-btn {
+        min-width: 140px !important;
+        height: 42px !important;
+        margin-top: 18px !important;
+        font-size: 13px !important;
+    }
+}
+

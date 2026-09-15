@@ -1,0 +1,134 @@
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white
+}
+
+.auth-panel {
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    animation: fadeLeft .6s ease both
+}
+
+.auth-content {
+    width: 100%;
+    max-width: 430px;
+    margin: auto
+}
+
+.auth-content h1 {
+    font: 800 36px Manrope;
+    letter-spacing: -1.5px;
+    margin: 0 0 8px
+}
+
+.auth-content > p {
+    color: var(--muted);
+    margin: 0 0 30px
+}
+
+.auth-form {
+    display: grid;
+    gap: 17px
+}
+
+.auth-form label,
+.modal-form label {
+    display: grid;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 700
+}
+
+.auth-form input,
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+    width: 100%;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 11px 12px;
+    outline: none;
+    background: white
+}
+
+.auth-form input:focus,
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px #2563eb16
+}
+
+.switch {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.switch a {
+    color: var(--primary);
+    font-weight: 700
+}
+
+.back-home {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.auth-art {
+    background: var(--dark);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+    position: relative;
+    overflow: hidden;
+    animation: fadeRight .65s ease .08s both
+}
+
+.auth-art:before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border: 1px solid #ffffff12;
+    border-radius: 50%;
+    top: -180px;
+    right: -120px
+}
+
+.auth-art > div {
+    max-width: 470px;
+    position: relative
+}
+
+.art-icon {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ffffff25;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #8fb4ff
+}
+
+.auth-art h2 {
+    font: 800 50px/1.08 Manrope;
+    letter-spacing: -2px
+}
+
+.auth-art h2 span {
+    color: #7fa7ff
+}
+
+.auth-art p {
+    color: #98a2b3;
+    line-height: 1.6
+}
+

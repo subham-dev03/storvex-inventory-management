@@ -1,0 +1,298 @@
+.page {
+    padding: 42px 44px;
+    max-width: 1450px;
+    margin: auto
+}
+
+.page-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    animation: fadeDown .5s ease .12s both
+}
+
+.page-head h1 {
+    font: 800 32px Manrope;
+    letter-spacing: -1px;
+    margin: 0 0 5px
+}
+
+.page-head p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px
+}
+
+.live-pill {
+    font-size: 12px;
+    color: var(--green);
+    background: #ecfdf3;
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-weight: 700
+}
+
+.live-pill i {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-right: 6px
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px
+}
+
+.stat-card,
+.card,
+.table-card,
+.supplier-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 13px
+}
+
+.stat-card {
+    padding: 20px;
+    animation: cardEnter .5s ease both;
+    transition: transform .22s ease
+}
+
+.stat-card:hover {
+    transform: translateY(-3px)
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: .15s
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: .22s
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: .29s
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: .36s
+}
+
+.stat-icon {
+    width: 38px;
+    height: 38px;
+    background: #eef4ff;
+    color: var(--primary);
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px
+}
+
+.stat-card small,
+.stat-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px
+}
+
+.stat-card strong {
+    display: block;
+    font: 800 25px Manrope;
+    margin: 5px 0
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    gap: 20px
+}
+
+.card {
+    padding: 22px;
+    animation: cardEnter .55s ease .3s both;
+    transition: transform .22s ease
+}
+
+.card:hover {
+    transform: translateY(-2px)
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start
+}
+
+.card-head h2 {
+    font: 700 16px Manrope;
+    margin: 0 0 4px
+}
+
+.card-head p {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0
+}
+
+.card-head > svg {
+    color: var(--amber)
+}
+
+.alert-list {
+    margin-top: 20px
+}
+
+.stock-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-top: 1px solid #f0f2f5;
+    animation: fadeUp .45s ease both
+}
+
+.stock-row:nth-child(1) {
+    animation-delay: .35s
+}
+
+.stock-row:nth-child(2) {
+    animation-delay: .42s
+}
+
+.stock-row:nth-child(3) {
+    animation-delay: .49s
+}
+
+.product-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.product-mini small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 2px
+}
+
+.product-icon,
+.supplier-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: #f2f4f7;
+    color: #667085;
+    display: grid;
+    place-items: center
+}
+
+.badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 9px;
+    border-radius: 20px;
+    text-transform: capitalize
+}
+
+.badge.warning {
+    background: #fffaeb;
+    color: #b54708
+}
+
+.badge.danger {
+    background: #fef3f2;
+    color: #b42318
+}
+
+.badge.success {
+    background: #ecfdf3;
+    color: #027a48
+}
+
+.quick .insight {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 0;
+    border-bottom: 1px solid #f0f2f5;
+    animation: fadeUp .45s ease both
+}
+
+.quick .insight:nth-child(1) {
+    animation-delay: .38s
+}
+
+.quick .insight:nth-child(2) {
+    animation-delay: .45s
+}
+
+.quick .insight:nth-child(3) {
+    animation-delay: .52s
+}
+
+.quick .insight:last-child {
+    border: 0
+}
+
+.quick .insight svg {
+    color: var(--primary)
+}
+
+.quick .insight strong {
+    display: block;
+    font: 700 20px Manrope
+}
+
+.quick .insight span {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 35px 15px;
+    font-size: 13px;
+    animation: fadeUp .45s ease both
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    animation: fadeDown .45s ease .12s both
+}
+
+.search {
+    width: 330px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--line);
+    padding: 9px 11px;
+    border-radius: 8px;
+    color: #98a2b3
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 13px
+}
+
+.result-count {
+    font-size: 12px;
+    color: var(--muted)
+}
+
